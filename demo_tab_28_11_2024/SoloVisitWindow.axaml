@@ -1,0 +1,307 @@
+<Window 
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="1425" d:DesignHeight="720"
+	x:Class="demo_tab_28_11_2024.SoloVisitWindow"
+	Title="SoloVisitWindow"
+	Background="rgb(52,250,220)"
+	x:CompileBindings="False">
+	<Grid
+		Name="grid_solovisit"
+		ShowGridLines="false"
+		RowDefinitions="auto,2*,2.5*,*,auto"
+		ColumnDefinitions="*,0.3*,1.3*">
+		<TextBlock
+			Text="Форма записи на посещение мероприятия"
+			Foreground="White"
+			Grid.ColumnSpan="3"
+			FontSize="28" HorizontalAlignment="Center" Margin="10"/>
+		<Border
+			Margin="5"
+			Background="White"
+			CornerRadius="20"
+			Grid.Row="1">
+			<StackPanel
+				HorizontalAlignment="Stretch">
+				<Border
+					Background="rgb(250,50,250)" CornerRadius="20"
+					Margin="0 0 0 8">
+					<TextBlock
+						Text="Информация для пропуска:" Margin="5"
+						FontSize="24"
+						HorizontalAlignment="Center" Foreground="White"/>
+				</Border>
+				<TextBlock
+					FontSize="20" Margin="0 0 0 8"
+					Text="Срок действия заявки:"
+					HorizontalAlignment="Center"/>
+				<StackPanel
+					Margin="0 0 0 8"
+					Orientation="Horizontal"
+					HorizontalAlignment="Center">
+					<TextBlock
+						FontSize="20"
+						Text="с* "/>
+					<CalendarDatePicker/>
+					<TextBlock
+						FontSize="20"
+						Text=" по "/>
+					<Viewbox
+						Height="24">
+						<DatePicker
+							Name="datepicker_end"/>
+					</Viewbox>
+				</StackPanel>
+				<TextBlock
+					Margin="0 0 0 8"
+					FontSize="20"
+					HorizontalAlignment="Center"
+					Text="Цель посещения:"/>
+				<TextBox
+					Name="tbox_purpose"
+					HorizontalAlignment="Center"/>
+			</StackPanel>
+		</Border>
+		<Border
+			Margin="5"
+			Background="White"
+			CornerRadius="20"
+			Grid.Row="1"
+			Grid.ColumnSpan="2" Grid.Column="1">
+			<StackPanel
+				HorizontalAlignment="Stretch">
+				<Border
+					Background="rgb(250,50,250)" CornerRadius="20">
+					<TextBlock
+						Text="Принимающая сторона:" Margin="5"
+						FontSize="24"
+						HorizontalAlignment="Center" Foreground="White"/>
+				</Border>
+
+				<TextBlock
+					Margin="20 8"
+					FontSize="20"
+					HorizontalAlignment="Left"
+					Text="Подразделение*:"/>
+				<ComboBox
+					Name="cbox_department"
+					HorizontalAlignment="Stretch"
+					Margin="20 0 0 8"/>
+				<TextBlock
+					Margin="20 0 0 8"
+					FontSize="20"
+					HorizontalAlignment="Left"
+					Text="ФИО*:"/>
+				<ComboBox
+					Name="cbox_employee"
+					HorizontalAlignment="Stretch"
+					Margin="20 0 0 8"/>
+			</StackPanel>
+		</Border>
+		<Border
+			Margin="5"
+			Background="White"
+			CornerRadius="20"
+			Grid.Row="2"
+			Grid.ColumnSpan="3">
+			<StackPanel
+				HorizontalAlignment="Stretch">
+				<Border
+					Background="rgb(250,50,250)" CornerRadius="20">
+					<TextBlock
+						Text="Информация о посетителе:" Margin="5"
+						FontSize="24"
+						HorizontalAlignment="Center" Foreground="White"/>
+				</Border>
+				<Grid
+					ColumnDefinitions="*,*,*">
+
+					<StackPanel
+						Margin="15"
+						Orientation="Horizontal">
+						<StackPanel>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="Фамилия*: "/>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="Имя*: "/>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="Отчество: "/>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="Телефон: "/>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="E-mail*: "/>
+						</StackPanel>
+						<StackPanel
+							Width="300">
+							<TextBox
+								Text="{Binding UserSurname}"
+								Margin="0 0 0 5"
+								Name="tbox_surname"/>
+							<TextBox
+								Text="{Binding UserName}"
+								Name="tbox_name"
+								Margin="0 0 0 5"/>
+							<TextBox
+								
+								Text="{Binding UserPatronymic}"
+								Name="tbox_patronymic"
+								Margin="0 0 0 5"/>
+							<MaskedTextBox
+								Text="{Binding Phone}"
+								Name="tbox_phone"
+								Mask="+7(000)000-00-00"
+								Margin="0 0 0 5"/>
+							<TextBox
+								Text="{Binding Email}"
+								Name="tbox_email"
+								Margin="0 0 0 5"/>
+						</StackPanel>
+					</StackPanel>
+					<StackPanel
+						Grid.Column="1"
+						Margin="15" Orientation="Horizontal">
+						<StackPanel>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="Организация*: "/>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="Примечание: "/>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="Дата рождения*: "/>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="Серия*: "/>
+							<TextBlock
+								Margin="0 0 0 10"
+								FontSize="20"
+								HorizontalAlignment="Left"
+								Text="Номер*: "/>
+						</StackPanel>
+						<StackPanel
+							Width="300">
+							<TextBox
+								Margin="0 0 0 5"
+								Name="tbox_organisation"/>
+							<TextBox
+								Name="tbox_tip"
+								Margin="0 0 0 5"/>
+							<DatePicker
+								Name="datepicker_birthday"
+								Margin="0 0 0 5"/>
+							<MaskedTextBox
+								Text="{Binding PassportSerie}"
+								Name="tbox_serie"
+								Mask="0000"
+								Margin="0 0 0 5"/>
+							<MaskedTextBox
+								Text="{Binding PassportNumber}"
+								Name="tbox_nomer"
+								Mask="000000"
+								Margin="0 0 0 5"/>
+						</StackPanel>
+					</StackPanel>
+					<StackPanel
+						Grid.Column="2" Margin="15">
+						<Border
+							BorderBrush="Black"
+							BorderThickness="1"
+								HorizontalAlignment="Center">
+							<Image
+								Source="/Images/solo.png"
+								Height="100"/>
+						</Border>
+						<StackPanel
+							Orientation="Horizontal"
+							HorizontalAlignment="Center">
+							<Button
+								BorderBrush="rgb(250,50,250)"
+								Margin="15"
+								Content="Удалить фото"/>
+							<Button
+								BorderBrush="rgb(250,50,250)"
+								Margin="15"
+								Content="Загрузить фото"/>
+						</StackPanel>
+					</StackPanel>
+				</Grid>
+			</StackPanel>
+		</Border>
+		<Border
+			Margin="5"
+			Background="White"
+			CornerRadius="20"
+			Grid.Row="3"
+			Grid.ColumnSpan="2">
+			<Panel
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch">
+				<Border
+					Background="rgb(250,50,250)" CornerRadius="20"
+					VerticalAlignment="Top">
+					<TextBlock
+						Text="Прикрепляемые документы:" Margin="5"
+						FontSize="24"
+						HorizontalAlignment="Center" Foreground="White"/>
+				</Border>
+				<Button
+					VerticalAlignment="Bottom" Margin="10"
+					Name="btn_addDocs" Content="ПРИКРЕПИТЬ ФАЙЛ"/>
+			</Panel>
+		</Border>
+		<StackPanel
+			Grid.Column="2" Grid.Row="3"
+			HorizontalAlignment="Center"
+			Margin="15" Orientation="Horizontal">
+			<Button
+				Name="btn_clearform"
+				Click="ClearForm"
+				BorderBrush="rgb(250,50,250)"
+				Background="White"
+				VerticalAlignment="Bottom" Margin="10"
+				FontSize="20"
+				Content="Очистить форму"/>
+			<Button
+				BorderBrush="rgb(250,50,250)"
+				Background="White"
+				VerticalAlignment="Bottom" Margin="10"
+				FontSize="20"
+				Content="Офомить заявку"/>
+		</StackPanel>
+		<Button
+			Name="btn_return"
+			Grid.Row="4"
+			BorderBrush="rgb(250,50,250)"
+			Background="White"
+			VerticalAlignment="Bottom" Margin="10"
+			FontSize="20"
+			Content="Назад"
+			Click="Return"/>
+	</Grid>
+</Window>

@@ -1,0 +1,56 @@
+<Window 
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	x:Class="demo_tab_28_11_2024.MainWindow"
+	Title="demo_tab_28_11_2024">
+	<Grid
+		ShowGridLines="False"
+		ColumnDefinitions="*,2*,*" RowDefinitions="*,3*,*"
+		Background="rgb(52,250,220)">
+		<Border
+			Grid.Column="1" Grid.Row="1"
+			CornerRadius="20" 
+			Background="White">
+			<StackPanel
+				HorizontalAlignment="Stretch">
+				<Border
+					Background="rgb(250,50,250)" CornerRadius="20">
+					<TextBlock
+						Text="Добро пожаловать!" Margin="15" FontSize="18"
+						HorizontalAlignment="Center" Foreground="White"/>
+				</Border>
+				<TextBox
+					Name="tbox_login" Text=""
+					HorizontalAlignment="Center" Watermark="Логин" Margin="0 40 0 0 "/>
+				<TextBox
+					Name="tbox_password" Text=""
+					HorizontalAlignment="Center" Watermark="Пароль"/>
+			</StackPanel>
+		</Border>
+
+		<Button
+			Grid.Column="1" Grid.Row="1"
+			VerticalAlignment="Bottom"
+			BorderBrush="rgb(250,50,250)"
+			Margin="15"
+			Content="Гость"
+			Click="LoginAsGuest"/>
+		<Button
+			Grid.Column="1" Grid.Row="1"
+			VerticalAlignment="Bottom" HorizontalAlignment="Center"
+			BorderBrush="rgb(250,50,250)"
+			Margin="15"
+			Content="Регистрация"
+			Click="Registration"/>
+		<Button
+			Grid.Column="1" Grid.Row="1"
+			VerticalAlignment="Bottom" HorizontalAlignment="Right"
+			BorderBrush="rgb(250,50,250)"
+			Margin="15"
+			Content="Вход"
+			Click="Login"/>
+	</Grid>
+</Window>

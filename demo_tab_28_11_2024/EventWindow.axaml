@@ -1,0 +1,88 @@
+<Window 
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	x:Class="demo_tab_28_11_2024.EventWindow"
+	Title="EventWindow">
+	<Grid
+		ColumnDefinitions="*,5*,*"
+		RowDefinitions="*,3*,*">
+		<TextBlock
+			Name="text"/>
+		<StackPanel
+			Grid.Column="1" Grid.Row="1"
+			Orientation="Horizontal" HorizontalAlignment="Center"
+			VerticalAlignment="Center">
+			<Button
+				Margin="10"
+				Click="VisitSolo"
+				BorderBrush="rgb(250,50,250)"
+		Background="rgb(52,250,220)">
+				<Button.Content>
+					<StackPanel
+						Orientation="Vertical"	HorizontalAlignment="Center"
+						Margin="10">
+						<Image
+							Source="/Images/solo.png"
+							Height="80" Margin="10"/>
+						<TextBlock
+							Text="Личное посещение"
+							Foreground="White"/>
+					</StackPanel>
+				</Button.Content>
+			</Button>
+			<Button
+				Margin="10"
+				Click="VisitMany"
+				BorderBrush="rgb(250,50,250)"
+				Background="rgb(52,250,220)">
+				<Button.Content>
+					<StackPanel
+						Orientation="Vertical"	HorizontalAlignment="Center"
+						Margin="10">
+						<Image
+							Source="/Images/many.png"
+							Height="80" Margin="10"/>
+						<TextBlock
+							Text="Групповое посещение"
+							Foreground="White"/>
+					</StackPanel>
+				</Button.Content>
+			</Button>
+		</StackPanel>
+		<Border
+			Margin="15"
+			HorizontalAlignment="Right"
+			Grid.ColumnSpan="3"
+			ClipToBounds="True"
+			BorderBrush="Black"
+			BorderThickness="1"
+			CornerRadius="50"
+			Height="50" Width="50">
+			<Image
+				Name="img_userphoto"
+				Source="/Images/solo.png"
+				HorizontalAlignment="Center"/>
+		</Border>
+		<Button
+			Name="btn_logout"
+			Grid.ColumnSpan="3"
+			Grid.RowSpan="3"
+			VerticalAlignment="Bottom"
+			BorderBrush="rgb(250,50,250)"
+			Margin="15"
+			Content="Выйти из аккаунта"
+			Click="LogOut"/>
+		<Button
+			HorizontalAlignment="Right"
+			Grid.ColumnSpan="3"
+			Grid.RowSpan="3"
+			VerticalAlignment="Bottom"
+			BorderBrush="rgb(250,50,250)"
+			Margin="15"
+			Content="История посещений"
+			Click="ShowHistory"/>
+	</Grid>
+</Window>

@@ -1,0 +1,129 @@
+<Window 
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	x:Class="demo_tab_28_11_2024.RegistrationWindow"
+	Title="RegistrationWindow"
+	Background="rgb(52,250,220)"
+	x:CompileBindings="False">
+	<Grid
+		Name="grid_reg"
+		ShowGridLines="False"
+		ColumnDefinitions="*,*,*"
+		RowDefinitions="auto,2*,*,*" Margin="15"
+		>
+		<TextBlock
+			Text="Форма регистрации пользователя" HorizontalAlignment="Center"
+			FontSize="20" Grid.ColumnSpan="3"
+			Margin="10" Foreground="White"/>
+		<Border
+			Margin="5"
+			Grid.Row="1"
+			CornerRadius="20"
+			Background="White">
+			<StackPanel>
+				<Border
+					Background="rgb(250,50,250)" CornerRadius="20">
+					<TextBlock
+						HorizontalAlignment="Center"
+						Text="Логин и пароль" Margin="10" Foreground="White"/>
+				</Border>
+				<TextBox
+					Name="tbox_reglogin"
+					Text="{Binding Login}"
+					Watermark="логин*"/>
+				<TextBox
+					Name="tbox_regpassword"
+					Text="{Binding Password}"
+					Watermark="пароль*"/>
+				<TextBox
+					Name="tbox_email"
+					Text="{Binding Email}"
+					Watermark="E-Mail*"/>
+			</StackPanel>
+		</Border>
+		<Border
+			Margin="5"
+			Grid.Column="1" Grid.Row="1" Grid.RowSpan=""
+			CornerRadius="20"
+			Background="White">
+			<StackPanel>
+				<Border
+					Background="rgb(250,50,250)" CornerRadius="20">
+					<TextBlock
+						HorizontalAlignment="Center"
+						Text="ФИО" Margin="10" Foreground="White"/>
+				</Border>
+				<TextBox
+					Name="tbox_surname"
+					Text="{Binding UserSurname}"
+					Watermark="Фамилия*"/>
+				<TextBox
+					Name="tbox_name"
+					Text="{Binding UserName}"
+					Watermark="Имя*"/>
+				<TextBox
+					Name="tbox_patronymic"
+					Text="{Binding UserPatronymic}"
+					Watermark="Отчество"/>
+			</StackPanel>
+		</Border>
+		<Border
+			Margin="5"
+			Grid.Column="2"  Grid.Row="1"
+			CornerRadius="20"
+			Background="White">
+			<StackPanel>
+				<Border
+					Background="rgb(250,50,250)" CornerRadius="20">
+					<TextBlock
+						HorizontalAlignment="Center"
+						Text="Паспортные данные" Margin="10" Foreground="White"/>
+				</Border>
+				<TextBlock
+					Text="Серия*"/>
+				<MaskedTextBox
+					Name="tbox_serie"
+					Mask="0000"
+					Text="{Binding PassportSerie}"/>
+				<TextBlock
+					Text="Номер*"/>
+				<MaskedTextBox
+					Name="tbox_nomer"
+					Mask="000000"
+					Text="{Binding PassportNumber}"/>
+			</StackPanel>
+		</Border>
+		<Border
+			Grid.Column=""  Grid.Row="2"
+			CornerRadius="20"
+			Background="White">
+			<StackPanel>
+				<Border
+					Background="rgb(250,50,250)" CornerRadius="20">
+					<TextBlock
+						HorizontalAlignment="Center"
+						Text="Дата рождения" Margin="10" Foreground="White"/>
+				</Border>
+				<DatePicker
+					Name="datepicker_birthday"/>
+			</StackPanel>
+		</Border>
+		<Button
+			Grid.Row="3"
+			BorderBrush="rgb(250,50,250)"
+			Background="White"
+			Content="Назад"
+			Click="ReturnToMain"/>
+		<Button
+			Grid.Row="3"
+			Grid.ColumnSpan="3"
+			HorizontalAlignment="Right"
+			BorderBrush="rgb(250,50,250)"
+			Background="White"
+			Content="Зарегистрироваться"
+			Click="ConfirmRegistration"/>
+	</Grid>
+</Window>
