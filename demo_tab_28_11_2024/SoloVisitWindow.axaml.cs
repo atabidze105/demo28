@@ -19,6 +19,8 @@ public partial class SoloVisitWindow : Window
         InitializeComponent();
         grid_solovisit.DataContext = _LoggedUser;
         datepicker_birthday.SelectedDate = _LoggedUser.UserId != 0 ? new DateTime(_LoggedUser.DateOfBirth.Year, _LoggedUser.DateOfBirth.Month, _LoggedUser.DateOfBirth.Day, 1, 1, 1).ToLocalTime() : null ;
+        datepicker_end.IsEnabled = false ;
+        cbox_employee.IsEnabled = false ;
     }
 
     private void Return(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -33,5 +35,13 @@ public partial class SoloVisitWindow : Window
 
         grid_solovisit.DataContext = new SoloUser();
         datepicker_birthday.SelectedDate = null;
+    }
+
+    private void DatePicker_SelectedDateChanged(object? sender, Avalonia.Controls.DatePickerSelectedValueChangedEventArgs e)
+    {
+        datepicker_end.IsEnabled = true ;
+        //datepicker_end
+        clndr.DisplayDateStart = new DateTime(datepicker_start.SelectedDate.Value.Year, datepicker_start.SelectedDate.Value.Month, datepicker_start.SelectedDate.Value.Day+1).ToLocalTime();
+        clndr.DisplayDateEnd = new DateTime(datepicker_start.SelectedDate.Value.Year, datepicker_start.SelectedDate.Value.Month, datepicker_start.SelectedDate.Value.Day+15);
     }
 }

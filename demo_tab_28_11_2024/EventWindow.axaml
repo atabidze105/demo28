@@ -10,7 +10,8 @@
 		ColumnDefinitions="*,5*,*"
 		RowDefinitions="*,3*,*">
 		<TextBlock
-			Name="text"/>
+			Name="text"
+			Grid.ColumnSpan="3"/>
 		<StackPanel
 			Grid.Column="1" Grid.Row="1"
 			Orientation="Horizontal" HorizontalAlignment="Center"

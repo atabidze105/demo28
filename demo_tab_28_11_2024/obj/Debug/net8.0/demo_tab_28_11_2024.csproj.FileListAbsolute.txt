@@ -373,3 +373,4 @@ C:\Users\prdb\Desktop\demo_tab_28_11_2024\demo_tab_28_11_2024\obj\Debug\net8.0\r
 C:\Users\prdb\Desktop\demo_tab_28_11_2024\demo_tab_28_11_2024\obj\Debug\net8.0\demo_tab.23BBF134.Up2Date
 C:\Users\prdb\Desktop\demo_tab_28_11_2024\demo_tab_28_11_2024\obj\Debug\net8.0\demo_tab_28_11_2024.genruntimeconfig.cache
 C:\Users\prdb\Desktop\demo_tab_28_11_2024\demo_tab_28_11_2024\obj\Debug\net8.0\ref\demo_tab_28_11_2024.dll
+C:\Users\prdb\Desktop\demo_tab_28_11_2024\demo_tab_28_11_2024\obj\Debug\net8.0\demo_tab_28_11_2024.sourcelink.json

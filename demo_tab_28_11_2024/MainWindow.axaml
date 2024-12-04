@@ -8,12 +8,11 @@
 	Title="demo_tab_28_11_2024">
 	<Grid
 		ShowGridLines="False"
-		ColumnDefinitions="*,2*,*" RowDefinitions="*,3*,*"
-		Background="rgb(52,250,220)">
+		ColumnDefinitions="*,2*,*" RowDefinitions="*,3*,*">
 		<Border
 			Grid.Column="1" Grid.Row="1"
-			CornerRadius="20" 
-			Background="White">
+			CornerRadius="20"
+		Background="rgb(52,250,220)">
 			<StackPanel
 				HorizontalAlignment="Stretch">
 				<Border
@@ -23,10 +22,10 @@
 						HorizontalAlignment="Center" Foreground="White"/>
 				</Border>
 				<TextBox
-					Name="tbox_login" Text=""
+					Name="tbox_login" Text="Taras24"
 					HorizontalAlignment="Center" Watermark="Логин" Margin="0 40 0 0 "/>
 				<TextBox
-					Name="tbox_password" Text=""
+					Name="tbox_password" Text="07m5yspn3K~K"
 					HorizontalAlignment="Center" Watermark="Пароль"/>
 			</StackPanel>
 		</Border>
